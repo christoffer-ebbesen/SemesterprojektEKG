@@ -1,0 +1,28 @@
+﻿<Window x:Class="EKG_GUI.AnalyseECG"
+        xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EKG_GUI"
+        mc:Ignorable="d"
+        Title="AnalyseECG" Height="450" Width="800">
+    <Grid Loaded="Grid_Loaded">
+        <lvc:CartesianChart Name ="Blodsukkergraf" Margin="504,138,52.6,152">
+            <lvc:CartesianChart.Series>
+                <lvc:LineSeries Name="ecgLine" Title="ECGmaaling" Fill = "Transparent" Values="{Binding YvaluesAnalyseECG}" />
+            </lvc:CartesianChart.Series>
+            
+        </lvc:CartesianChart>
+        <Label x:Name="LabelCPR" Content="Indtast CPR-nummer" HorizontalAlignment="Left" Margin="208,48,0,0" VerticalAlignment="Top" Width="138"/>
+        <TextBox x:Name="tbCPRnub" HorizontalAlignment="Left" Height="23" Margin="369,51,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btSearch" Content="Søg" HorizontalAlignment="Left" Margin="560,59,0,0" VerticalAlignment="Top" Width="75"/>
+        <Label x:Name="label" Content="Patient" HorizontalAlignment="Left" Margin="208,127,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.215,0.825"/>
+        <Label Content="Måling" HorizontalAlignment="Left" Margin="208,209,0,0" VerticalAlignment="Top"/>
+        <Label Content="Tilstand" HorizontalAlignment="Left" Margin="203,331,0,0" VerticalAlignment="Top"/>
+        <ListBox HorizontalAlignment="Left" Height="83" Margin="313,212,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="-0.83,0.521"/>
+        <TextBox x:Name="tbPatinentNummer" HorizontalAlignment="Left" Height="23" Margin="293,138,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="313,335,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+
+    </Grid>
+</Window>
